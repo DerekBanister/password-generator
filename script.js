@@ -1,25 +1,65 @@
 //https://jshint.com/
 
 //definining global variables
-
-var lowers = 'abcdefghijklmnopqrstuvwxyz';
-var uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var specials = '!@#$^&%*()+=-[]{}|:<>?,.';
+var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var symbols = '!@#$^&%*()+=-[]{}|:<>?,.';
 var numbers = '1234567890';
 //setting password variable to empty so I can fill it based on user input
 var password = ""
 //setting booleans to false so I can make them true via user input
-var lowerSelection = false;
-var upperSelection = false;
-var specialSelection = false;
-var numberSelection = false;
+var lowersSelection = false;
+var uppersSelection = false;
+var symbolsSelection = false;
+var numbersSelection = false;
 //So i can call button to prompt 
 var generateBtn = document.getElementById("generate");
 
+//create function that generates random password
+generateBtn.addEventListener("click", function generatePass(){
+  var confirmLength = "";
+  //character length input
+  while (isNaN(confirmLength) || confirmLength < 8 || confirmLength > 128){
+    confirmLength = prompt ("How many characters would you like your password to be");
+    //creating if statement that allows user to exit out of prompt window
+    if (confirmLength === null){
+      break;
+    }
+  }
+
+//user input prompts on which character types to use in password
+if (confirmLength) {
+  if (confirm("Would you like lowercase characters in your password") == true) {
+      lowersSelection = true;
+  }
+if (confirm("Would you like uppercase characters in your password") == true){
+  uppersSelection = true;
+  }
+if (confirm("Would you like special characters in your password?") == true){
+  symbolsSelection = true;
+  }
+if (confirm("would you like to use numerical characters?") == true){
+  numbersSelection = true;
+  }
+if (lowersSelection === false && uppersSelection === false && specialsSelection == false && numbersSelection === false){
+  alert("At least one character type must be selected")
+  }
+
+    }
+  }
+)   
+//how do I generate a password based on these inputs
+
+  
+
+  
 
 
 
-var generateBtn = document.getElementById("generate");
+
+
+
+/*var generateBtn = document.getElementById("generate");
 //I feel like this doesnt have to be a function*******
 //make button prompt the screen where you can select number of characters
 generateBtn.addEventListener("click", function prompted(){
@@ -72,8 +112,8 @@ var passwordText = document.querySelector("#password");
  passwordText.value = password;
  return password;
 }
+*/
 
-//define variables
 
 
 
