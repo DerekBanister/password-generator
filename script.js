@@ -48,14 +48,23 @@ if (lowersSelection === false && uppersSelection === false && specialsSelection 
     }
   }
 )   
-//how do I generate a password based on these inputs
+//Generate a password based on these inputs. use +=? create variable with "" that I can combine all these inputs in?
+
+
+//create for loop that spits out password into text area. Something like for (var i = 0; i< 1; i++). Use Math.floor/Math.random? Return?
 
   
 
   
 
 
-
+/*code given in assignment, im assuming this function writes the password in the text area from the function above?
+//function writePassword() {
+  //var password = passGenerate();
+ //var passwordText = document.querySelector("#password");
+ // passwordText.value = password;
+ // return password;
+ //}
 
 
 
@@ -104,15 +113,8 @@ function passGenerate(){
   //concatenating all of the elements in this object and putting them together based on my if statements
   document.getElementById("password").value = randoSequence(password).join("");
 }
-
-//code given in assignment, im assuming this function writes the password in the text area from the function above?
-function writePassword() {
- var password = passGenerate();
-var passwordText = document.querySelector("#password");
- passwordText.value = password;
- return password;
-}
 */
+
 
 
 
