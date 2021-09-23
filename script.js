@@ -1,5 +1,24 @@
 //https://jshint.com/
 
+//definining global variables
+
+var lowers = 'abcdefghijklmnopqrstuvwxyz';
+var uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var specials = '!@#$^&%*()+=-[]{}|:<>?,.';
+var numbers = '1234567890';
+//setting password variable to empty so I can fill it based on user input
+var password = ""
+//setting booleans to false so I can make them true via user input
+var lowerSelection = false;
+var upperSelection = false;
+var specialSelection = false;
+var numberSelection = false;
+//So i can call button to prompt 
+var generateBtn = document.getElementById("generate");
+
+
+
+
 var generateBtn = document.getElementById("generate");
 //I feel like this doesnt have to be a function*******
 //make button prompt the screen where you can select number of characters
@@ -48,16 +67,13 @@ function passGenerate(){
 
 //code given in assignment, im assuming this function writes the password in the text area from the function above?
 function writePassword() {
-  var password = passGenerate();
- var passwordText = document.querySelector("#password");
- passwordText.randoSequence = password;
+ var password = passGenerate();
+var passwordText = document.querySelector("#password");
+ passwordText.value = password;
+ return password;
 }
 
-for (i=0; i<1000; i++)
-{
-  writePassword();
-
-}
+//define variables
 
 
 
@@ -70,27 +86,6 @@ for (i=0; i<1000; i++)
 
 
 
-
-
-
-
-
-
-
-//functions that generate random letters/numbers/symbols
-
-//function lower() {
- // return rando("qwertyuiopasdfghjklzxcvbnm")
-//}
-//function upper() {
-//  return rando("QWERTYUIOPASDFGHJKLZXCVBNM");
-//}
-//function number() {
- // return rando(9);
-//}
-//function symbol() {
-//  return rando('!@#$%^&*(){}[]=<>/,.');
-//}
 
 
 
