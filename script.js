@@ -1,6 +1,5 @@
 //https://jshint.com/
 
-
 var generateBtn = document.getElementById("generate");
 //I feel like this doesnt have to be a function*******
 //make button prompt the screen where you can select number of characters
@@ -31,7 +30,7 @@ generateBtn.addEventListener("click", function prompted(){
 );
 
 //function that generates random password using my random number functions
-function passgenerate(){
+function passGenerate(){
   var password = "";
  
   //these if statement are adding value to the variable pass
@@ -49,18 +48,17 @@ function passgenerate(){
 
 //code given in assignment, im assuming this function writes the password in the text area from the function above?
 function writePassword() {
-  var password = passgenerate();
+  var password = passGenerate();
  var passwordText = document.querySelector("#password");
  passwordText.randoSequence = password;
 }
 
-  //generateBtn.addEventListener("click", {
-    //prompted();,
-   // passgenerate();,
-    //writePassword();
-   // }
-   
-//  )
+for (i=0; i<1000; i++)
+{
+  writePassword();
+
+}
+
 
 
 
