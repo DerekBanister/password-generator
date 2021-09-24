@@ -1,10 +1,10 @@
 //https://jshint.com/
 
 //definining global variables
-var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var symbols = '!@#$^&%*()+=-[]{}|:<>?,.';
-var numbers = '1234567890';
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var symbols = "!@#$^&%*()+=-[]{}|:<>?,.";
+var numbers = "1234567890";
 //setting password variable to empty so I can fill it based on user input
 var password = "";
 
@@ -22,7 +22,7 @@ generateBtn.addEventListener("click", function() { // anonymous function (no dec
   passGenerate();
   passwordCreate();
   writePassword();
-})
+});
 function prompts() {
   while (isNaN(promptLength) || promptLength < 8 || promptLength > 128) {
     promptLength = prompt("What length would you like the password to be? (Between 8 to 128 characters)");
@@ -42,11 +42,10 @@ function prompts() {
       numbersSelection = true;
       }
       if (lowersSelection === false && uppersSelection === false && symbolsSelection === false && numbersSelection === false){
-        alert("You must select atleast one character type")
+        alert("You must select atleast one character type");
       }
     }
  
-  
   console.log(promptLength, lowersSelection, uppersSelection, symbolsSelection, numbersSelection);
 
 }
@@ -67,12 +66,12 @@ function passGenerate() {
   }
   console.log(charSelection);
 }
-  //takes both my global variables (charSelection and promptLength) and used math.floor and math random to generate password based on user inputs
+  //takes both my global variables (charSelection and promptLength) and used math.floor and math.random to generate password based on user inputs
 function passwordCreate(){
   password = "";
   for (var i = 0; i < promptLength; i++) {
       password += charSelection.charAt(Math.floor(Math.random() * charSelection.length));
-  };
+  }
   console.log(password);
 
 return password;
