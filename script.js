@@ -24,11 +24,10 @@ generateBtn.addEventListener("click", function() { // anonymous function (no dec
   writePassword();
 })
 function prompts() {
-  promptLength = prompt("How many characters would you like your password to be");
-  while (!promptLength || promptLength < 8 || promptLength > 128) {
- 
-}
+  while (isNaN(promptLength) || promptLength < 8 || promptLength > 128) {
+    promptLength = prompt("What length would you like the password to be? (Between 8 to 128 characters)");
   
+}
   if (promptLength) {
     if (confirm("Would you like lowercase characters in your password") == true){
       lowersSelection = true;

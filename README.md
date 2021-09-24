@@ -2,7 +2,7 @@
 
 ============================================================================================================================================================
 
-### This project generates a random password user based on the criteria they have chosen including upper and lowercase letters, special symbols, and numbers. It then takes all of the user's input and generates that password and displays it into the text area provided.
+### This project generates a random password for the user based on the criteria they have chosen including upper and lowercase letters, special symbols, and numbers. It then takes all of the user's input and generates that password and displays it into the text area provided.
 
 
 
@@ -19,8 +19,7 @@
 * [Generate your very own secure password here!](https://derekbanister.github.io/password-generator/)
 
 
-## Authors
-
+## Author
 #### Derek Banister
 
 - [Link to Portfolio Site](https://derekbanister.github.io/First-Portfolio/)
