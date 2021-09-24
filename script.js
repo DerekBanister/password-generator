@@ -16,7 +16,6 @@ var promptLength;
 var charSelection;
 //So i can call button to prompt 
 var generateBtn = document.getElementById("generate");
-
 //create function that generates random password
 generateBtn.addEventListener("click", function() { // anonymous function (no declared name)
   prompts();
@@ -26,9 +25,11 @@ generateBtn.addEventListener("click", function() { // anonymous function (no dec
 })
 function prompts() {
   promptLength = prompt("How many characters would you like your password to be");
-  if (!promptLength || promptLength < 8 || promptLength > 128) {
-    prompts() // recursive funtion (a callback inside itself)
+  while (!promptLength || promptLength < 8 || promptLength > 128) {
+    if (confirmLength === null) {
+        break;
   }
+}
   lowersSelection = confirm("Would you like lowercase characters in your password");
   uppersSelection = confirm ("Would you like uppercase characters in your password");
   symbolsSelection = confirm ("Would you like special characters in your password");
@@ -37,9 +38,9 @@ function prompts() {
   console.log(promptLength, lowersSelection, uppersSelection, symbolsSelection, numbersSelection);
 
 }
-//create for loop that spits out password into text area. Something like for (var i = 0; i< 1; i++). Use Math.floor/Math.random? Return?
+
 function passGenerate() {
-  var charSelection = "";
+  charSelection = "";
   if (lowersSelection) {
       charSelection += lowercase;
   }
@@ -55,14 +56,11 @@ function passGenerate() {
   console.log(charSelection);
 }
   
-password = passwordCreate(charSelection, promptLength);
-
-
-function passwordCreate(promptLength, charSelection) {
+function passwordCreate(){
   password = "";
   for (var i = 0; i < promptLength; i++) {
       password += charSelection.charAt(Math.floor(Math.random() * charSelection.length));
-  }
+  };
   console.log(password);
 
 return password;
@@ -74,6 +72,7 @@ var password = passwordCreate();
  var passwordText = document.querySelector("#password");
   passwordText.value = password;
   return password;
+  
  }
 
 
