@@ -6,13 +6,14 @@ var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var symbols = '!@#$^&%*()+=-[]{}|:<>?,.';
 var numbers = '1234567890';
 //setting password variable to empty so I can fill it based on user input
-var password;
-//setting booleans to false so I can make them true via user input
+var password = "";
+
 var lowersSelection;
 var uppersSelection;
 var symbolsSelection;
 var numbersSelection;
 var promptLength;
+var charSelection;
 //So i can call button to prompt 
 var generateBtn = document.getElementById("generate");
 
@@ -20,7 +21,8 @@ var generateBtn = document.getElementById("generate");
 generateBtn.addEventListener("click", function() { // anonymous function (no declared name)
   prompts();
   passGenerate();
-
+  passwordCreate();
+  writePassword();
 })
 function prompts() {
   promptLength = prompt("How many characters would you like your password to be");
@@ -33,7 +35,6 @@ function prompts() {
   numbersSelection = confirm ("Would you like numbers in your password");
   
   console.log(promptLength, lowersSelection, uppersSelection, symbolsSelection, numbersSelection);
-
 
 }
 //create for loop that spits out password into text area. Something like for (var i = 0; i< 1; i++). Use Math.floor/Math.random? Return?
@@ -52,28 +53,24 @@ function passGenerate() {
       charSelection += numbers;
   }
   console.log(charSelection);
+}
   
-  givePassword(charSelection)
+password = passwordCreate(charSelection, promptLength);
+
+
+function passwordCreate(promptLength, charSelection) {
+  password = "";
+  for (var i = 0; i < promptLength; i++) {
+      password += charSelection.charAt(Math.floor(Math.random() * charSelection.length));
+  }
+  console.log(password);
+
+return password;
+
 }
 
-function givePassword(selectedChars) {
-  var temporaryPassword;
-  // .split() array
-  // .charAt() string
-  selectedChars;
-  
-  
-  password = temporaryPassword;
-}
-
-
-
-
-
-
-//code given in assignment, im assuming this function writes the password in the text area from the function above?
 function writePassword() {
-  // var password = passGenerate();
+var password = passwordCreate();
  var passwordText = document.querySelector("#password");
   passwordText.value = password;
   return password;
