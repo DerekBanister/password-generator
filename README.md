@@ -6,7 +6,7 @@
 
 
 
-![Password Generator](pg.png)
+![Password Generator](pg.PNG)
 
 ## Built With
 
