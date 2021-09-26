@@ -7,6 +7,8 @@
 
 
 ![Password Generator](pg.PNG)
+![Password Generator](pg1.PNG)
+![Password Generator](pg2.PNG)
 
 ## Built With
 
